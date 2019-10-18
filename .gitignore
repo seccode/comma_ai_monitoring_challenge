@@ -1,0 +1,5 @@
+# Ignore video folder
+videos/
+
+# Ignore face model
+model/

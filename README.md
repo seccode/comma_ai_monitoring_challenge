@@ -14,9 +14,9 @@ The determination of inattentiveness is done by a support vector machine that us
 - Eyes Area
 - Head Position (3 Euler Angles)
 
-The feature vector is the past 30 frames of each of these features. The training of the SVM is done within the main script by calling the```bash--label 1```flag, and holding down either the 0 or 1 key to label the current frame attentive and inattentive respectively. While definitions are not given for inattentiveness, the assumption is made that not looking ahead and having eyes closed constitutes inattentiveness.
+The feature vector is the past 30 frames of each of these features. The training of the SVM is done within the main script by calling the```bash --label 1 ```flag, and holding down either the 0 or 1 key to label the current frame attentive and inattentive respectively. While definitions are not given for inattentiveness, the assumption is made that not looking ahead and having eyes closed constitutes inattentiveness.
 
-The labeling of the videos is done and the features/labels are saved so that when the main script is run by calling the```bash--predict 1```flag, all feature/label pairs are used to initialize/train the SVM and perform predictions on the given video.
+The labeling of the videos is done and the features/labels are saved so that when the main script is run by calling the```bash --predict 1 ```flag, all feature/label pairs are used to initialize/train the SVM and perform predictions on the given video.
 
 The SVM's probabilistic classification of the current frame is shown by the top bar, with the percentages displayed underneath. There is a threshold of time of inattentiveness before an alert is given; this is logical that not every instance of inattentiveness will cause alarm, as mistakes or quick glances away from the road should not do this. The two states of inattentiveness are shown in the examples below:
 ![alt text](https://raw.githubusercontent.com/seccode/comma_ai_monitoring_challenge/master/group_2.png)

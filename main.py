@@ -208,7 +208,7 @@ class FaceDetector:
         self.predictor = dlib.shape_predictor(self.face_landmark_path)
 
         if args.predict:
-            # Train SVM instantiate classifier
+            # Train SVM classifier
             clf = self.train_svm()
 
         # Driver state stores classifications of attentive/inattentive for
@@ -304,6 +304,11 @@ class FaceDetector:
                     LABELS.append(1) #Inattentive
                 else:
                     LABELS.append(0) #Attentive
+
+            # Save frames as pictures
+            if key == 112:
+                cv2.imwrite('pics/'+str(len(glob.glob('pics/*')))+'.png',frame_orig)
+
 
         if args.label:
             # Save labeled instances to data file

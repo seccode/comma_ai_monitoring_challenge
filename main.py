@@ -305,11 +305,6 @@ class FaceDetector:
                 else:
                     LABELS.append(0) #Attentive
 
-            # Save frames as pictures
-            if key == 112: # On key = p
-                # cv2.imwrite('pics/'+str(len(glob.glob('pics/*')))+'.png',frame)
-                cv2.imwrite('pics/'+str(len(glob.glob('pics/*')))+'.png',frame_orig)
-
 
         if args.label:
             # Save labeled instances to data file
